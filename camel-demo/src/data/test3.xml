@@ -1,0 +1,22 @@
+<Apples>
+    <Apple>
+        <ID>000001</ID>
+        <Name>Granny Smith</Name>
+        <Amount>5</Amount>
+    </Apple>
+    <Apple>
+        <ID>000002</ID>
+        <Name>Pink Lady</Name>
+        <Amount>12</Amount>
+    </Apple>
+    <Apple>
+        <ID>000003</ID>
+        <Name>Elstar</Name>
+        <Amount>3</Amount>
+    </Apple>
+    <Apple>
+        <ID>000004</ID>
+        <Name>Jonagold</Name>
+        <Amount>1</Amount>
+    </Apple>
+</Apples>

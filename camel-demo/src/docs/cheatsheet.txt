@@ -1,0 +1,150 @@
+Open Source integration framework waarmee je gemakkelijk verschillende systemen kunt integreren
+door het Produceren en Consumeren van data
+
+Gebaseerd op bekende Enterprise Integration Pattern (EIPs)
+
+Industriestandaard voor het verminderen van boilerplate code voor complexe integraties
+
+Daarnaast:
+	-Error Handling
+	-Redelivery policies
+
+Wat zijn EIPs 
+Een verzameling design patterns om systemen te maken om verschillende software met elkaar te integreren.
+Voorbeelden:
+	-Split
+	-Filter
+	-Aggregate
+	-Transform
+
+
+
+Camel Concepten:
+	Message - 	Body, Headers, Bijlagen
+	Exchange - 	Container die Camel gebruikt om een Message te routeren
+			In Message en Out Message
+			Properties, ExchangeID, (Java) Exception
+			Exchange Pattern (InOnly of InOut)
+	Processor	Doet iets met de message (mapping, validatie, etc...)
+	Route		Pad tussen twee endpoints, het pad wat je exchange af legt.
+			Java DSL of XML DSL
+	Component	Out of the box libraries om met verschillende technologieen te praten
+			(bijv: JDBC, AMQP(S), HTTP(S), (S)FTP, SMTP)
+	Endpoint	Consumer Endpoint (from())
+			Producer Endpoint (to())
+			In URI formaat (bijvoorbeeld: direct:d.demo.component
+						      http://localhost:80)
+	Expressions & Predicates
+			Condities om bijvoorbeeld berichten te filteren of te splitsen
+			Regex, CRON, Simple, Groovy
+	Camel Context	Het Camel Runtime systeem dat alles samenhoudt
+
+Demo's
+	1: From en To
+	2: Processor
+	3: Split
+	4: (Un)marshalling
+	5: Aggregate
+	
+
+
+1:
+
+        from("file://C:\\messages\\Test1\\in")
+                .log("Body: ${body}")
+                .to("file://C:\\messages\\Test1\\out")
+        ;
+		
+2:
+
+        from("file://C:\\messages\\Test1\\in")
+                .log("Body: ${body}")
+                .process(new MyProcessor())
+                .log("Body: ${body}")
+                .to("file://C:\\messages\\Test1\\out")
+        ;
+		
+        String input = exchange.getIn().getBody(String.class);
+
+        int length = input.length();
+        char firstChar = input.charAt(0);
+        char lastChar = input.charAt(length - 1);
+
+        String output = "Input has length " + length + ", starts with " + firstChar + ", ends with " + lastChar;
+
+        exchange.getOut().setBody(output);
+
+3:
+
+        from("file://C:\\messages\\Test1\\in")
+                .log("Body before split: ${body}")
+                .split(xpath("/Apples/Apple"))
+                    .setHeader("AppleID", xpath("/Apple/ID").resultType(String.class))
+                    .log("Body ${in.header.AppleID} after split: ${body}")
+                    .to("file://C:\\messages\\Test1\\out?fileName=${in.header.AppleID}.xml")
+                .end()
+        ;
+
+4:
+
+        from("file://C:\\messages\\Test1\\in")
+                .to("log:nl.svb.icc.demo.BeforeUnmarshal?showAll=true")
+                .unmarshal().json(JsonLibrary.Jackson, Worker.class)
+                .to("log:nl.svb.icc.demo.AfterUnmarshal?showAll=true")
+                .process("WorkerToEmployeeProcessor")
+                .to("log:nl.svb.icc.demo.BeforeMarshal?showAll=true")
+                .marshal().json(JsonLibrary.Jackson, Employee.class)
+                .to("log:nl.svb.icc.demo.AfterMarshal?showAll=true")
+                .to("file://C:\\messages\\Test1\\out")
+        ;
+		
+		
+        Worker worker = exchange.getIn().getBody(Worker.class);
+
+        Employee employee = new Employee();
+
+        employee.setEmployeeID(worker.getWorkerID());
+
+        Name name = new Name();
+        String[] workerName = worker.getName().split(" ");
+        name.setFirstName(workerName[0]);
+        name.setLastName(workerName[1]);
+        employee.setName(name);
+
+        Address address = new Address();
+        String[] workerAddress = worker.getAddress().split(" ");
+        address.setStreet(workerAddress[0]);
+        address.setHouseNumber(workerAddress[1]);
+        employee.setAddress(address);
+
+        exchange.getIn().setBody(employee);
+    }
+
+5:
+
+        from("file://C:\\messages\\Test1\\in")
+                .unmarshal().json(JsonLibrary.Jackson, Employee.class)
+                .aggregate(constant(true), new EmployeeAggregationStrategy()).completionSize(5).completionTimeout(10000)
+                .marshal().json(JsonLibrary.Jackson, Employees.class)
+                .to("file://C:\\messages\\Test1\\out")
+        ;
+		
+
+public class EmployeeAggregationStrategy implements AggregationStrategy {
+    public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+
+        if(oldExchange == null){
+            List<Employee> employeeList = new ArrayList<Employee>();
+            Employee employee = newExchange.getIn().getBody(Employee.class);
+            employeeList.add(employee);
+            newExchange.getIn().setBody(employeeList);
+        } else {
+            List<Employee> employeeList = oldExchange.getIn().getBody(ArrayList.class);
+            Employee employee = newExchange.getIn().getBody(Employee.class);
+            employeeList.add(employee);
+            newExchange.getIn().setBody(employeeList);
+        }
+        return newExchange;
+    }
+}
+

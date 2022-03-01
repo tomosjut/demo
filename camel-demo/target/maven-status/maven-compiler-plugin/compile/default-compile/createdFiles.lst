@@ -1,0 +1,10 @@
+nl\svb\icc\message\employee\Address.class
+nl\svb\icc\processor\MyProcessor.class
+nl\svb\icc\message\employee\Name.class
+nl\svb\icc\message\employee\Employee.class
+nl\svb\icc\processor\WorkerToEmployeeProcessor.class
+nl\svb\icc\MySpringBean.class
+nl\svb\icc\MySpringBootApplication.class
+nl\svb\icc\aggregate\EmployeeAggregationStrategy.class
+nl\svb\icc\message\worker\Worker.class
+nl\svb\icc\message\employee\Employees.class
