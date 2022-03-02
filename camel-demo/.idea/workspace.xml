@@ -76,7 +76,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/docs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -85,6 +85,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\git\demo\camel-demo" />
       <recent name="C:\git\demo\camel-demo\src\docs" />
       <recent name="C:\git\demo\camel-demo\src\data" />
     </key>
@@ -134,7 +135,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646160781936</updated>
       <workItem from="1646160783215" duration="15805000" />
-      <workItem from="1646223538971" duration="2816000" />
+      <workItem from="1646223538971" duration="3168000" />
     </task>
     <servers />
   </component>
