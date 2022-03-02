@@ -1,9 +1,7 @@
-package nl.svb.icc.routes;
+package nl.svb.icc.route;
 
-import nl.svb.icc.message.employee.Employee;
-import nl.svb.icc.message.employee.Employees;
+import nl.svb.icc.processor.MyProcessor;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.model.dataformat.JsonLibrary;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,10 +10,16 @@ import org.springframework.stereotype.Component;
  * Use <tt>@Component</tt> to make Camel auto detect this route when starting.
  */
 @Component
-public class RouteOne extends RouteBuilder {
+public class RouteTwo extends RouteBuilder {
 
     @Override
     public void configure() {
+        from("file://C:\\messages\\CamelTest2\\in")
+                .log("Body: ${body}")
+                .process("MyProcessor")
+                .log("Body: ${body}")
+                .to("file://C:\\messages\\CamelTest2\\out")
+        ;
     }
 
 }

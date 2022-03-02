@@ -24,7 +24,7 @@ Camel Concepten:
 	Exchange - 	Container die Camel gebruikt om een Message te routeren
 			In Message en Out Message
 			Properties, ExchangeID, (Java) Exception
-			Exchange Pattern (InOnly of InOut)
+			Message Exchange Pattern (InOnly of InOut)
 	Processor	Doet iets met de message (mapping, validatie, etc...)
 	Route		Pad tussen twee endpoints, het pad wat je exchange af legt.
 			Java DSL of XML DSL
@@ -131,20 +131,28 @@ Demo's
 		
 
 public class EmployeeAggregationStrategy implements AggregationStrategy {
-    public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
 
-        if(oldExchange == null){
+    int id = 0;
+    public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+        if (oldExchange == null){
+            Employees employees = new Employees();
             List<Employee> employeeList = new ArrayList<Employee>();
             Employee employee = newExchange.getIn().getBody(Employee.class);
+
             employeeList.add(employee);
-            newExchange.getIn().setBody(employeeList);
+            employees.setEmployees(employeeList);
+            newExchange.getIn().setBody(employees);
+            id++;
+            newExchange.getIn().setHeader("ID", id);
+            return newExchange;
         } else {
-            List<Employee> employeeList = oldExchange.getIn().getBody(ArrayList.class);
+            Employees employees = oldExchange.getIn().getBody(Employees.class);
             Employee employee = newExchange.getIn().getBody(Employee.class);
-            employeeList.add(employee);
-            newExchange.getIn().setBody(employeeList);
+
+            employees.getEmployees().add(employee);
+            oldExchange.getIn().setBody(employees);
+            return oldExchange;
         }
-        return newExchange;
     }
 }
 

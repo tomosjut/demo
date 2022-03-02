@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187489b8-2650-41db-92e7-384158bb4d37" name="Changes" comment="" />
+    <list default="true" id="187489b8-2650-41db-92e7-384158bb4d37" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/test5-1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test5-1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/test5-2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test5-2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/test5-3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test5-3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/test5-4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test5-4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/test5-5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test5-5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/test5-7.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test5-7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/test5-8.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test5-8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/test5-9.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test5-9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/Presentatie1.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/Presentatie1.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docs/cheatsheet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/cheatsheet.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/svb/icc/MySpringBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/svb/icc/routes/RouteOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/svb/icc/route/RouteOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/NOTICE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/MySpringBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/MySpringBootApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/aggregate/EmployeeAggregationStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/message/employee/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/message/employee/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/message/employee/Employees.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/message/employee/Name.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/message/worker/Worker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/processor/MyProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/processor/WorkerToEmployeeProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/svb/icc/routes/RouteOne.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +49,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -25,15 +60,24 @@
     </option>
   </component>
   <component name="ProjectId" id="25nRI22CL4Joa5Kzb86A6CGC2zC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/docs" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -41,15 +85,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\git\demo\camel-demo\src\docs" />
       <recent name="C:\git\demo\camel-demo\src\data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\git\demo\camel-demo\src\main\java\nl\svb\icc" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="nl.svb.icc.route" />
+      <recent name="nl.svb.icc.routes" />
       <recent name="nl.svb.icc.message.employee" />
       <recent name="nl.svb.icc.message" />
-      <recent name="nl.svb.icc.routes" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MySpringBootApplication">
@@ -87,7 +133,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646160781936</updated>
-      <workItem from="1646160783215" duration="7705000" />
+      <workItem from="1646160783215" duration="15805000" />
+      <workItem from="1646223538971" duration="2816000" />
     </task>
     <servers />
   </component>
